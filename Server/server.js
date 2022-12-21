@@ -10,11 +10,17 @@ const cookieParser = require('cookie-parser');
 const connectToDb = require('./config/connectToDb');
 const accountsController = require('./controllers/accountsController');
 const requireAuth = require('./middleware/requireAuth');
+const path = require('path');
 
 // Create Express App
 const app = express();
 
 // App Configuration
+
+// Have Node serve the files for our built React app
+app.use(express.static(path.resolve(__dirname, '../client/build')));
+
+
 app.use(express.json());
 app.use(cookieParser());
 app.use(
@@ -47,6 +53,11 @@ app.put('/account/withdraw', requireAuth, accountsController.makeWithdraw);
 
 // Show All Data Route
 app.get('/account/all', accountsController.showAll);
+
+// All other GET requests not handled before will return our React app
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+  });
 
 
 // Start our server

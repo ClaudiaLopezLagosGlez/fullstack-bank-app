@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.84487ea8.css",
+    "main.js": "/static/js/main.3f342e6e.js",
+    "static/media/BankLogo.png": "/static/media/BankLogo.15c9cc51d261734e73c9.png",
+    "static/media/photo.jpg": "/static/media/photo.5a5306d3ecd5638e2051.jpg",
+    "index.html": "/index.html",
+    "main.84487ea8.css.map": "/static/css/main.84487ea8.css.map",
+    "main.3f342e6e.js.map": "/static/js/main.3f342e6e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.84487ea8.css",
+    "static/js/main.3f342e6e.js"
+  ]
+}
